@@ -1,0 +1,23 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# Logs
+*.log
+
+# Virtual environment
+venv/
+env/
+ProjectEnv/
+
+# IDE-specific files
+.idea/
+.vscode/
+
+# Ignore audio/video files
+*.mp3
+*.mp4
+*.wav
+
+# Ignore secrets and dotenv files
+.env
