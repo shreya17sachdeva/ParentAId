@@ -43,7 +43,7 @@ const QueryDetails = ({ query }) => {
       <h4>Answer:</h4>
       <p>{query.answer || 'No answer available'}</p>
       <p>Created: {formatDate(query.createdAt)}</p>
-      <span className="material-symbols-outlined" onClick={handleClick}>
+      <span id = "delete" className="material-symbols-outlined" onClick={handleClick}>
         delete
       </span>
     </div>

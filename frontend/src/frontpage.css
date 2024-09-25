@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.App {
+    position: relative;
+    min-height: 100vh;
+}
+
+.landing {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+}
+
+.landing .circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #017143;
+    clip-path: circle(600px at right 800px);
+}
+
+.landing .content {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.landing .content .textBox {
+    position: relative;
+    max-width: 600px;
+}
+
+.landing .content .textBox h2 {
+    color: #333;
+    font-size: 3em;
+    line-height: 1.4em;
+    font-weight: 500;
+}
+
+.landing .content .textBox h2 span {
+    color: #017143;
+    font-size: 1.2em;
+    font-weight: 900;
+}
+
+.landing .content .textBox p {
+    color: #333;
+}
+
+.landing .content .imgBox {
+    width: 600px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20px;
+    margin-top: 50px;
+}
+
+.landing .content .imgBox img {
+    max-width: 840px;
+}
+

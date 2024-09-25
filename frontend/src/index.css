@@ -1,52 +1,170 @@
+/* Import Poppins font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-/* layout */
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
   --primary: #1aac83;
   --error: #e7195a;
 }
 
 body {
+  font-family: "Poppins", sans-serif;
   background: #f1f1f1;
-  margin: 0;
-  font-family: "Poppins";
+  /* overflow: hidden; Prevent horizontal scrollbar */
 }
 
+/* Header styles */
 header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   background: #fff;
+  z-index: 1000;
 }
 
 header .container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 10px 20px;
+  padding: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-header a{
+header a {
   color: #333;
   text-decoration: none;
 }
 
+/* Landing page styles */
+.landing {
+  overflow-y: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  min-height: 100vh;
+  background: #fff;
+  overflow: hidden;
+}
+
+.landing .circle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: #017143;
+  clip-path: circle(600px at right 800px);
+}
+
+.landing .content {
+  position: relative;
+  max-width: 2000px;
+  margin: 20px; /* Top margin to account for fixed header */
+  padding: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  z-index: 1;
+}
+
+.landing .content .textBox {
+  flex: 1;
+  max-width: 2000px;
+  padding-right: 20px;
+}
+
+.landing .content .textBox h2 {
+  color: #333;
+  font-size: 3em;
+  line-height: 1.4em;
+  font-weight: 500;
+}
+
+.landing .content .textBox h2 span {
+  color: #017143;
+  font-size: 1.2em;
+  font-weight: 900;
+}
+
+.landing .content .textBox p {
+  color: #333;
+  margin-top: 40px;
+}
+
+.landing .content .imgBox {
+  flex: 1;
+  max-width: 600px;
+  display: flex;
+  justify-content: flex-start;
+  margin-right: 240px;
+}
+
+.landing .content .imgBox img {
+  max-width: 1000px;
+  height: 700px;
+}
+
+/* Media query for landing responsiveness */
+@media (max-width: 1200px) {
+  .landing .content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .landing .content .textBox,
+  .landing .content .imgBox {
+    max-width: 100%;
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .landing .content .imgBox {
+    justify-content: center;
+    margin-top: 40px;
+  }
+}
+
+/* Styles for content after the landing section */
+.main-content {
+  position: relative;
+  margin-top: 100vh; /* Push content below the landing section */
+  background: #f1f1f1;
+  z-index: 2;
+}
+
+/* Pages layout */
 .pages {
   max-width: 1400px;
   padding: 20px;
   margin: 0 auto;
 }
 
-/* query home page  */
+/* Query home page */
 .home {
   display: grid;
   grid-template-columns: 3fr 1fr;
   gap: 100px;
+  margin-top: 50px;
+}
+
+#index {
+  margin-left: auto;
 }
 
 .query-details {
   background: #fff;
   border-radius: 4px;
-  margin: 20px auto;
+  margin: 40px auto;
   padding: 20px;
   position: relative;
   box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
@@ -75,7 +193,11 @@ header a{
   color: #333;
 }
 
-/* new query form  */
+/* New query form */
+.create {
+  margin-top: 100px;
+}
+
 label, input {
   display: block;
 }
@@ -100,7 +222,7 @@ form button {
   cursor: pointer;
 }
 
-div .error {
+div.error {
   padding: 10px;
   background: #ffefef;
   border: 1px solid var(--error);
@@ -109,11 +231,11 @@ div .error {
   margin: 20px 0;
 }
 
-imput .error {
+input.error {
   border: 1px solid var(--error);
 }
 
-/* navbar  */
+/* Navbar */
 nav {
   display: flex;
   align-items: center;
@@ -135,12 +257,11 @@ nav button {
   margin-left: 10px;
 }
 
-/* auth form  */
+/* Auth forms */
 form.signup, form.login {
   max-width: 400px;
-  margin: 40px auto;
+  margin: 100px auto;
   padding: 20px;
   background: #fff;
   border-radius: 4px;
 }
-
